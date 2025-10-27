@@ -4,7 +4,7 @@ import '../models/book.dart';
 enum BookSortType { author, title }
 
 // Bloc and cubit states used with equatable
-class BookState extends Equatable {
+class BookState {
   final List<Book> books;
   final BookSortType sortType;
   final Book? selectedBook;
@@ -15,7 +15,6 @@ class BookState extends Equatable {
     this.selectedBook,
   });
   
-//updating state fields without any issues
   BookState copyWith({
     List<Book>? books,
     BookSortType? sortType,
@@ -28,7 +27,4 @@ class BookState extends Equatable {
       selectedBook: deselectBook ? null : selectedBook ?? this.selectedBook,
     );
   }
-
-  @override
-  List<Object?> get props => [books, sortType, selectedBook];
 }
