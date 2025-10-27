@@ -3,7 +3,6 @@ import '../models/book.dart';
 
 enum BookSortType { author, title }
 
-// Bloc and cubit states used with equatable
 class BookState {
   final List<Book> books;
   final BookSortType sortType;
