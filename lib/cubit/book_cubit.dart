@@ -14,6 +14,7 @@ class BookCubit extends Cubit<BookState> {
         description: 'This is a description for Book ${index + 1}.',
       );
     });
+    books.sort((a, b) => a.author.compareTo(b.author)); // Add this line
     emit(state.copyWith(books: books));
   }
 
